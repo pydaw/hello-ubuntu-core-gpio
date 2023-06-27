@@ -13,11 +13,11 @@ confinement: devmode # use 'strict' once you have the right plugs and slots
 
 
 apps:
-  hello-world-python:
+  hello-ubuntu-core-gpio:
     command: bin/helloworldgpio
 
 parts:
-  hello-world-python:
+  hello-ubuntu-core-gpio:
     # See 'snapcraft plugins'
     plugin: python
     python-packages:

@@ -1,28 +1,25 @@
-# External module imports
 import RPi.GPIO as GPIO
 import time
 
 
 def main():
-    print("Hello LED")
+    led_pin = 14
 
-    ledPin = 9
-
-    print("Setting Broadcom Mode")
-    # Pin Setup:
     GPIO.setmode(GPIO.BCM) # Broadcom pin-numbering scheme
+    GPIO.setwarnings(False)
+    GPIO.setup(led_pin, GPIO.OUT) 
 
-    GPIO.setup(ledPin, GPIO.OUT) 
-
-    print("Here we go! Press CTRL+C to exit")
+    print("Press CTRL+C to exit")
     try:
         while True:
-            print ("OFF")
-            GPIO.output(ledPin, GPIO.LOW)
-            time.sleep(1.00)
-            print ("ON")            
-            GPIO.output(ledPin, GPIO.HIGH)
+            print ("Led is ON")            
+            GPIO.output(led_pin, GPIO.HIGH)
             time.sleep(1.00) 
+            
+            print ("Led is OFF")
+            GPIO.output(led_pin, GPIO.LOW)
+            time.sleep(1.00)
+            
     except KeyboardInterrupt: # If CTRL+C is pressed, exit cleanly:
         GPIO.cleanup() # cleanup all GPIO
 

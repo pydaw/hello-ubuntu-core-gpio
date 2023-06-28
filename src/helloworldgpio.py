@@ -16,13 +16,13 @@ def main():
 
     print("Here we go! Press CTRL+C to exit")
     try:
-    while 1:
-            print ("OFF");
+        while True:
+            print ("OFF")
             GPIO.output(ledPin, GPIO.LOW)
             time.sleep(1.00)
-            print ("ON");            
+            print ("ON")            
             GPIO.output(ledPin, GPIO.HIGH)
-            time.sleep(1) 
+            time.sleep(1.00) 
     except KeyboardInterrupt: # If CTRL+C is pressed, exit cleanly:
     GPIO.cleanup() # cleanup all GPIO
 

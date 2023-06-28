@@ -24,7 +24,7 @@ def main():
             GPIO.output(ledPin, GPIO.HIGH)
             time.sleep(1.00) 
     except KeyboardInterrupt: # If CTRL+C is pressed, exit cleanly:
-    GPIO.cleanup() # cleanup all GPIO
+        GPIO.cleanup() # cleanup all GPIO
 
 if __name__ == '__main__':
     main()
